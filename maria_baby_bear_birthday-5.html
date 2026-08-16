@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maria — Bear's Secret Night</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap');
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{font-family:"DM Sans",sans-serif;color:#fff;background:#070416}
+body:before{content:"";position:fixed;inset:0;z-index:-5;background:radial-gradient(circle at 15% 15%,#7c55d533,transparent 28%),radial-gradient(circle at 85% 18%,#ff4f9c2e,transparent 27%),radial-gradient(circle at 50% 100%,#6954d52c,transparent 40%),linear-gradient(145deg,#05030e,#100820 58%,#070410)}
+.stars{position:fixed;inset:0;z-index:-4;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(#e7caff 1px,transparent 1px);background-size:83px 83px,137px 137px;background-position:10px 20px,60px 40px;opacity:.25}
+.moon{position:fixed;right:7%;top:7%;width:110px;height:110px;border-radius:50%;background:#fff5d8;box-shadow:0 0 50px #fff1b955,0 0 110px #e9c8ff22;opacity:.8}.moon:after{content:"";position:absolute;right:-15px;top:-9px;width:105px;height:105px;border-radius:50%;background:#0b0617}
+.orb{position:fixed;width:260px;height:260px;border-radius:50%;filter:blur(70px);opacity:.25;animation:drift 10s ease-in-out infinite alternate}.a{background:#ff3f9e;left:-120px;bottom:0}.b{background:#7957ff;right:-100px;top:25%;animation-delay:-4s}@keyframes drift{to{transform:translate(80px,-55px) scale(1.15)}}
+.bar{position:fixed;z-index:50;top:0;left:0;width:100%;height:4px;background:#ffffff10}.bar i{display:block;height:100%;width:10%;background:linear-gradient(90deg,#ff72b6,#a983ff,#69d8ff);box-shadow:0 0 12px #ff72b6;transition:.5s}
+.page{position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:25px 15px}.page.active{display:flex;animation:enter .65s cubic-bezier(.2,.8,.2,1)}@keyframes enter{from{opacity:0;transform:translateY(22px) scale(.97)}to{opacity:1;transform:none}}
+.card{width:min(760px,100%);position:relative;text-align:center;padding:38px 25px;border-radius:32px;background:linear-gradient(145deg,#ffffff12,#ffffff06);border:1px solid #ffffff22;box-shadow:0 35px 100px #000b,inset 0 1px #fff2;backdrop-filter:blur(22px)}
+.card:before{content:"";position:absolute;inset:-1px;border-radius:32px;padding:1px;background:linear-gradient(120deg,#ff7ab955,#a784ff33,#62dfff55);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.ey{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#9ddfff}.bear{font-size:112px;line-height:1;margin-bottom:8px;filter:drop-shadow(0 0 25px #ff75b955);animation:bob 2.2s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-10px) rotate(2deg)}}
+h1,h2{font-family:"Cormorant Garamond",serif;font-weight:600;margin:8px 0;color:#fff}h1{font-size:clamp(70px,16vw,125px);line-height:.75;text-shadow:0 0 30px #ff6db555}h2{font-size:clamp(45px,9vw,72px);line-height:.9;text-shadow:0 0 24px #9c82ff33}.sub{max-width:620px;margin:20px auto;color:#c9c2d5;line-height:1.8;font-size:14px}.note{max-width:650px;margin:20px auto;font:24px/1.55 "Cormorant Garamond";color:#f1e9f5}.note b{color:#ff9bc9}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;max-width:560px;margin:25px auto}.choice{padding:18px;border-radius:19px;border:1px solid #ffffff22;background:#ffffff0b;color:#fff;cursor:pointer;transition:.25s;font-weight:600}.choice:hover{transform:translateY(-5px);background:#ffffff14;border-color:#ff83bc88;box-shadow:0 15px 35px #ff55a822}.yes{border-color:#61d7ba55}.no{border-color:#ff7ca055}.good{background:#17483c!important;border-color:#70e0bb!important}.bad{animation:shake .32s}@keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}.feed{height:25px;color:#ff9bc8;font-size:13px}.btn{border:1px solid #ffffff22;border-radius:999px;padding:14px 27px;margin:6px;font:600 14px "DM Sans";color:#fff;background:#ffffff0b;cursor:pointer;transition:.25s}.btn:hover{transform:translateY(-4px)}.primary{border:0;background:linear-gradient(105deg,#ff5fa9,#9b76ff,#52cfff);box-shadow:0 12px 40px #a25bff38}.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:25px}.chip{padding:11px 16px;border-radius:99px;background:#ffffff0a;border:1px solid #ffffff1e;color:#ded5e8}.lock{font-size:54px;margin:8px}.secret{display:none;margin:22px auto 0;max-width:600px;padding:22px;border-radius:22px;background:#ff5c9c0c;border:1px solid #ff75b955;font:23px/1.55 "Cormorant Garamond";color:#ffe7f2}.float{position:fixed;z-index:100;pointer-events:none;animation:rise 4.5s linear forwards}@keyframes rise{from{transform:translateY(0) scale(.5);opacity:0}15%{opacity:1}to{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+@media(max-width:600px){.card{padding:30px 15px}.grid{grid-template-columns:1fr}.bear{font-size:88px}.note{font-size:21px}}
+</style>
+</head>
+<body>
+<div class="stars"></div><div class="moon"></div><div class="orb a"></div><div class="orb b"></div><div class="bar"><i id="bar"></i></div>
+
+<section class="page active"><div class="card">
+<div class="bear">🐻🎀</div><div class="ey">Baby Bear's Secret Night</div><h1>Maria</h1>
+<div class="sub">Tonight, Baby Bear has hidden a birthday surprise somewhere in this little universe.<br>Every door opens only when you solve the friendship challenge. 🔐✨</div>
+<button class="btn primary" onclick="next()">Enter the secret room ✦</button>
+</div></section>
+
+<section class="page"><div class="card">
+<div class="lock">🔐</div><div class="ey">Friendship Challenge 01</div><h2>Sach Sach Batao 👀</h2>
+<div class="note">Kya tum kabhi mera message dekh kar <b>jaan-bujh kar thora late reply</b> karti ho? 😈</div>
+<div class="grid"><div class="choice yes" onclick="yn(true,this,'f1')">😂 YES</div><div class="choice no" onclick="yn(false,this,'f1')">😇 NO</div></div><div id="f1" class="feed"></div>
+</div></section>
+
+<section class="page"><div class="card">
+<div class="bear">🐻🌙</div><div class="ey">Door unlocked</div><h2>Bear Saw That 👀</h2>
+<div class="note">YES? <b>“Ahaaa… caught you!”</b> 😈<br><br>NO? <b>“Hmm… Baby Bear needs evidence.”</b> 😂</div>
+<div class="chips"><span class="chip">🤭 Little secrets</span><span class="chip">💬 Random chats</span><span class="chip">😂 Inside jokes</span></div>
+<button class="btn primary" onclick="next()">Unlock another room →</button>
+</div></section>
+
+<section class="page"><div class="card">
+<div class="lock">💗</div><div class="ey">Friendship Challenge 02</div><h2>Don't Overthink 😏</h2>
+<div class="note">Kya tumne kabhi meri koi funny baat yaad karke <b>secretly smile</b> kiya hai?</div>
+<div class="grid"><div class="choice yes" onclick="yn(true,this,'f2')">🙈 YES</div><div class="choice no" onclick="yn(false,this,'f2')">😇 NO</div></div><div id="f2" class="feed"></div>
+</div></section>
+
+<section class="page"><div class="card">
+<div class="bear">🐻💌</div><div class="ey">Secret Room 02</div><h2>Okay… Interesting 😏</h2>
+<div class="sub">Bear has officially collected one suspicious friendship fact.</div>
+<div class="chips"><span class="chip">✨ Secret smiles</span><span class="chip">🙈 Little shyness</span><span class="chip">😈 Harmless teasing</span><span class="chip">🤝 Trust</span></div>
+<button class="btn primary" onclick="next()">There's a trickier one →</button>
+</div></section>
+
+<section class="page"><div class="card">
+<div class="lock">😈</div><div class="ey">Friendship Challenge 03</div><h2>Pick One 🤭</h2>
+<div class="note">Agar meri taraf se achanak <b>“Oye!”</b> aaye, tumhara first reaction?</div>
+<div class="grid"><div class="choice" onclick="ans(this,true,'f3')">😂 “Kya hua?”</div><div class="choice" onclick="ans(this,false,'f3')">👻 Ignore</div><div class="choice" onclick="ans(this,false,'f3')">😴 So jaungi</div><div class="choice" onclick="ans(this,false,'f3')">🏃 Bhaag jaungi</div></div><div id="f3" class="feed"></div>
+</div></section>
+
+<section class="page"><div class="card">
+<div class="ey">Friendship Challenge 04</div><h2>One Tiny Rule 🤝</h2>
+<div class="note">Agar friendship ki ek rule choose karni ho, kya tum choose karogi:<br><b>“Busy ho to bhi gayab mat hona without saying anything.”</b>?</div>
+<div class="grid"><div class="choice yes" onclick="yn(true,this,'f4')">💗 YES</div><div class="choice no" onclick="yn(false,this,'f4')">🙃 NO</div></div><div id="f4" class="feed"></div>
+</div></section>
+
+<section class="page"><div class="card">
+<div class="bear">🐻✨</div><div class="ey">Final Door</div><h2>Baby Bear's Verdict</h2>
+<div class="note"><b>“Slightly shararti… but definitely a good friend.”</b> 😌💗</div>
+<div class="chips"><span class="chip">🤝 Trust</span><span class="chip">😂 Laughter</span><span class="chip">💗 Care</span><span class="chip">😈 Teasing</span></div>
+<button class="btn primary" onclick="next()">Open the birthday room 🎂</button>
+</div></section>
+
+<section class="page"><div class="card">
+<div class="bear">🐻🎂💗</div><div class="ey">All secrets unlocked</div><h2>Happy Birthday, Maria!</h2>
+<div class="note">You survived all of Baby Bear's questions. 😂<br>Now comes the one thing that was never a puzzle.</div>
+<button class="btn primary" onclick="reveal()">Open the final letter 💌</button>
+<div class="secret" id="secret"><b>Maria, you're one of one. 🐻💗</b><br><br>May your year be full of genuine happiness, unforgettable laughs, beautiful surprises and friends who stay through every chapter.<br><br>Happy Birthday! 🎂✨</div>
+</div></section>
+
+<script>
+let p=0,total=document.querySelectorAll('.page').length,pg=document.querySelectorAll('.page');
+function render(){pg.forEach((x,i)=>x.classList.toggle('active',i===p));document.getElementById('bar').style.width=((p+1)/total*100)+'%'}
+function next(){if(p<total-1){p++;render();floaty(12)}}
+function yn(ok,el,id){if(ok){el.classList.add('good');document.getElementById(id).textContent='Ahaaa 😈 Baby Bear is taking notes!';setTimeout(next,750)}else{el.classList.add('bad');document.getElementById(id).textContent='Hmm… Bear is suspicious 👀 Try again.';setTimeout(()=>el.classList.remove('bad'),450)}}
+function ans(el,ok,id){if(ok){el.classList.add('good');document.getElementById(id).textContent='Exactly 😂 Friendship answer approved!';setTimeout(next,700)}else{el.classList.add('bad');document.getElementById(id).textContent='Nope 😈 Think like a real friend.';setTimeout(()=>el.classList.remove('bad'),400)}}
+function reveal(){document.getElementById('secret').style.display='block';floaty(55)}
+function floaty(n){for(let i=0;i<n;i++){let x=document.createElement('div');x.className='float';x.textContent=['💗','✨','🐻','🎀','🌙','♡'][Math.floor(Math.random()*6)];x.style.left=Math.random()*100+'%';x.style.top='98%';x.style.fontSize=(14+Math.random()*20)+'px';x.style.animationDelay=Math.random()*1.2+'s';document.body.appendChild(x);setTimeout(()=>x.remove(),5200)}}
+render();
+</script>
+</body></html>
